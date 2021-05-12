@@ -44,7 +44,7 @@ void add_dnodeint(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	new_node->n = atoi(hold_data.instructions[1]);
-	/* if stack is empty */
+	/* if stack is empty so it's the first node */
 	if (*stack == NULL)
 	{
 		new_node->prev = *stack;
