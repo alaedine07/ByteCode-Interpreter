@@ -31,7 +31,7 @@ void add_stack(stack_t **stack, unsigned int line_number)
 **/
 void sub_stack(stack_t **stack, unsigned int line_number)
 {
-	if ((*stack)->prev == NULL || *stack == NULL)
+	if (((*stack)->prev == NULL && (*stack)->next == NULL) || *stack == NULL)
 	{
 		dprintf(2, "L%d: can't sub, stack too short\n", line_number);
 		free(hold_data.lineptr);
