@@ -16,6 +16,9 @@ void treat(unsigned int lb, stack_t **stack)
 		{"swap", swap_stack},
 		{"add", add_stack},
 		{"nop", do_nothing},
+		{"sub", sub_stack},
+		{"div", div_stack},
+		{"mul", mul_stack},
 		{NULL, NULL}
 	};
 	int i = 0;
@@ -98,9 +101,12 @@ int main(int argc, char **argv)
 	{
 		line_number++;
 		/* split every line by delimiters */
-		parse_line();
-		treat(line_number, &stack);
-		free_array(hold_data.instructions);
+		if (*hold_data.lineptr != '\n')
+		{
+			parse_line();
+			treat(line_number, &stack);
+			free_array(hold_data.instructions);
+		}
 	}
 	fclose(hold_data.fp);
 	free(hold_data.lineptr);
