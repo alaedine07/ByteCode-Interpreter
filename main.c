@@ -20,6 +20,7 @@ void treat(unsigned int lb, stack_t **stack)
 		{"div", div_stack},
 		{"mul", mul_stack},
 		{"mod", mod_stack},
+		{"pchar", char_stack},
 		{NULL, NULL}
 	};
 	int i = 0;

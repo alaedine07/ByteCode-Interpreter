@@ -53,6 +53,7 @@ void add_dnodeint(stack_t **stack, unsigned int line_number)
 	else
 	{
 		new_node->prev = *stack;
+		new_node->next = NULL;
 		(*stack)->next = new_node;
 	}
 	*stack = new_node;

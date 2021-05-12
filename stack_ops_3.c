@@ -35,3 +35,13 @@ void mod_stack(stack_t **stack, unsigned int line_number)
 	free((*stack)->next);
 	(*stack)->next = NULL;
 }
+/**
+ * char_stack - print last element of the stack as char
+ * @stack: head of stack as doubly linked lists
+ * @line_number: line number in instructions file
+**/
+void char_stack(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
