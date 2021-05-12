@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 
 #define DELIM " $\n\t\a"
 /**
@@ -68,4 +69,5 @@ void do_nothing(stack_t **stack, unsigned int line_number);
 void sub_stack(stack_t **stack, unsigned int line_number);
 void div_stack(stack_t **stack, unsigned int line_number);
 void mul_stack(stack_t **stack, unsigned int line_number);
+int check_comment(void);
 #endif

@@ -81,6 +81,7 @@ int main(int argc, char **argv)
 	char *filename = NULL;
 	size_t len;
 	unsigned int line_number = 0;
+	int v = 0;
 	/* this always points to the top of the stack */
 	stack_t *stack = NULL;
 
@@ -96,21 +97,22 @@ int main(int argc, char **argv)
 		dprintf(2, "ERROR: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	/* read the file content line by line */
 	while (getline(&hold_data.lineptr, &len, hold_data.fp) != -1)
 	{
 		line_number++;
-		/* split every line by delimiters */
 		if (*hold_data.lineptr != '\n')
 		{
-			parse_line();
-			treat(line_number, &stack);
-			free_array(hold_data.instructions);
+			v = check_comment();
+			if (!v)
+			{
+				parse_line();
+				treat(line_number, &stack);
+				free_array(hold_data.instructions);
+			}
 		}
 	}
 	fclose(hold_data.fp);
 	free(hold_data.lineptr);
-	/* no problem occured during treatment */
 	free_dlistint(stack);
 	return (EXIT_SUCCESS);
 }
