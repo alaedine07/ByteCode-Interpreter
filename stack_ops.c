@@ -47,7 +47,7 @@ void add_dnodeint(stack_t **stack, unsigned int line_number)
 	/* if stack is empty */
 	if (*stack == NULL)
 	{
-		new_node->prev = NULL;
+		new_node->prev = *stack;
 		new_node->next = NULL;
 	}
 	else
