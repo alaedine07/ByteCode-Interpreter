@@ -12,6 +12,10 @@ void add_stack(stack_t **stack, unsigned int line_number)
 		free(hold_data.lineptr);
 		free_array(hold_data.instructions);
 		fclose(hold_data.fp);
+		if (*stack != NULL)
+		{
+			free_dlistint(*stack);
+		}
 		exit(EXIT_FAILURE);
 	}
 

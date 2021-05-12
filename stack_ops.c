@@ -31,6 +31,10 @@ void add_dnodeint(stack_t **stack, unsigned int line_number)
 		free(hold_data.lineptr);
 		free_array(hold_data.instructions);
 		fclose(hold_data.fp);
+		if (*stack != NULL)
+		{
+			free_dlistint(*stack);
+		}
 		exit(EXIT_FAILURE);
 	}
 	new_node = malloc(sizeof(stack_t));
@@ -114,6 +118,10 @@ void swap_stack(stack_t **stack, unsigned int line_number)
 		free(hold_data.lineptr);
 		free_array(hold_data.instructions);
 		fclose(hold_data.fp);
+		if (*stack != NULL)
+		{
+			free_dlistint(*stack);
+		}
 		exit(EXIT_FAILURE);
 	}
 	x = (*stack)->n;
