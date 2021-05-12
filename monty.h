@@ -51,4 +51,18 @@ typedef struct data_s
 
 extern all_data_t hold_data;
 
+/* base functions */
+void treat(unsigned int lb, stack_t **stack);
+void parse_line(void);
+/* helper functions */
+void free_dlistint(stack_t *head);
+void free_array(char **array);
+/* instruction operations */
+void print_dlistint(stack_t **stack, unsigned int line_number);
+void add_dnodeint(stack_t **stack, unsigned int line_number);
+void print_stack_top(stack_t **stack, unsigned int line_number);
+void remove_top(stack_t **stack, unsigned int line_number);
+void swap_stack(stack_t **stack, unsigned int line_number);
+void add_stack(stack_t **stack, unsigned int line_number);
+void do_nothing(stack_t **stack, unsigned int line_number);
 #endif
