@@ -94,7 +94,7 @@ int main(int argc, char **argv)
 	hold_data.fp = fopen(filename, "r");
 	if (hold_data.fp == NULL)
 	{
-		dprintf(2, "ERROR: Can't open file %s\n", argv[1]);
+		dprintf(2, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	while (getline(&hold_data.lineptr, &len, hold_data.fp) != -1)
