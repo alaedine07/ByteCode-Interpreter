@@ -68,3 +68,24 @@ void char_stack(stack_t **stack, unsigned int line_number)
 	}
 	printf("%c\n", (*stack)->n);
 }
+/**
+ * string_stack - print string on the stack
+ * @stack: head of stack as doubly linked lists
+ * @line_number: line number in instructions file
+**/
+void string_stack(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+	(void)line_number;
+
+	if (*stack == NULL)
+	{
+		printf("\n");
+	}
+	while (tmp && tmp->n != 0 && (tmp->n > 0 && tmp->n <= 127))
+	{
+		printf("%c", tmp->n);
+		tmp = tmp->prev;
+	}
+	printf("\n");
+}

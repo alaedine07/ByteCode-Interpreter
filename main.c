@@ -21,6 +21,7 @@ void treat(unsigned int lb, stack_t **stack)
 		{"mul", mul_stack},
 		{"mod", mod_stack},
 		{"pchar", char_stack},
+		{"pstr", string_stack},
 		{NULL, NULL}
 	};
 	int i = 0;

@@ -71,5 +71,6 @@ void div_stack(stack_t **stack, unsigned int line_number);
 void mul_stack(stack_t **stack, unsigned int line_number);
 void mod_stack(stack_t **stack, unsigned int line_number);
 void char_stack(stack_t **stack, unsigned int line_number);
+void string_stack(stack_t **stack, unsigned int line_number);
 int check_comment(void);
 #endif
